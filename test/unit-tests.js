@@ -15,15 +15,24 @@ describe('scoreWord', () => {
       const score = scoreWord('world')
       assert.equal(score, 9)
     })
-    it('should return a value of 0 if the world is null', () => {
+    it('should return a value of 0 if the word is null', () => {
       const score = scoreWord(null)
+      assert.equal(score, 0)
+    })
+    it('should return a value of 0 if the word is an empty string', () => {
+      const score = scoreWord('')
       assert.equal(score, 0)
     })
   })
 
   context('multiplier', () => {
-    it.skip('should turn all letters to uppercase', () => {
-
+    it('it should multiply the word score', () => {
+      const score = scoreWord('hello', 2)
+      assert.equal(score, 16)
+    })
+    it('it should multiply the word score', () => {
+      const score = scoreWord('world', 3)
+      assert.equal(score, 27)
     })
   })
 
